@@ -1,20 +1,23 @@
-#pragma once
-#include <SFML/Graphics.h>
+#ifndef fight_Menu
+#define fight_Menu
+
+#include <SFML/Graphics.hpp>
 #include <SFML/System/Vector2.hpp>
 #include <vector>
 
 class Menu{
 	private: 
-		Vector<string> options;
-		Vector<sf::RectangleShape> shapes;
-		Vector<sf::Text> texts
-		sf::RenderWindow window;
+		std::vector<std::string> options;
+		std::vector<sf::RectangleShape> shapes;
+		std::vector<sf::Text> texts;
+		sf::RenderWindow &window;
 	    bool visible;
 		void draw();
 
 	public:
-		Menu(Vector<string> opts, sf::RenderWindow& w, sf::Vector2<double> top_left, sf::Vector2<double> bot_right, double space);
+		Menu(std::vector<std::string> opts, sf::RenderWindow& w, sf::Vector2<double> top_left, sf::Vector2<double> bot_right, double space = 10.0);
 		void show();
 		void hide();
 		int process(sf::Event event);
-}
+};
+#endif
