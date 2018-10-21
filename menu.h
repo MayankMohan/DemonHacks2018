@@ -10,17 +10,16 @@ class Menu{
 		std::vector<std::string> options;
 		std::vector<sf::RectangleShape*> shapes;
 		std::vector<sf::Text*> texts;
-		sf::RenderWindow *window;
 		sf::Vector2<sf::Color> statusColor;
 	    bool visible;
 		int current;
 		
 	public:
-		Menu(std::vector<std::string> opts, sf::RenderWindow *w, sf::Vector2<double> origin, sf::Vector2<double> size, sf::Font *font, double padding = 10.0, sf::Vector2<sf::Color> cols = sf::Vector2<sf::Color>(sf::Color(111, 133, 170), sf::Color(76, 142, 247)));
+		Menu(std::vector<std::string> opts, sf::Vector2<double> origin, sf::Vector2<double> size, sf::Font *font, double padding = 10.0, sf::Vector2<sf::Color> cols = sf::Vector2<sf::Color>(sf::Color(111, 133, 170), sf::Color(76, 142, 247)));
 		~Menu();
 		void show();
 		void hide();
-		void draw();
+		void draw(sf::RenderWindow *window);
 		bool isOpen(){return visible;}
 		int process(sf::Event event);
 };
