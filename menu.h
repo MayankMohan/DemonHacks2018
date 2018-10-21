@@ -12,6 +12,8 @@ class Menu{
 		std::vector<sf::Text> texts;
 		sf::RenderWindow &window;
 	    bool visible;
+		int current;
+		
 		void draw();
 
 	public:
