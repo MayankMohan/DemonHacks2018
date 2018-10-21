@@ -1,6 +1,6 @@
 #include "menu.h"
 
-void Menu::draw(){
+void Menu::draw(sf::RenderWindow *window){
 	for(sf::RectangleShape *r : shapes)
 		window->draw(*r);
 		
@@ -8,7 +8,7 @@ void Menu::draw(){
 		window->draw(*t);
 }
 
-Menu::Menu(std::vector<std::string> opts, sf::RenderWindow *w, sf::Vector2<double> origin, sf::Vector2<double> size, sf::Font* font, double padding, sf::Vector2<sf::Color> cols): options(opts), window(w), statusColor(cols), visible(false), current(0){
+Menu::Menu(std::vector<std::string> opts, sf::Vector2<double> origin, sf::Vector2<double> size, sf::Font* font, double padding, sf::Vector2<sf::Color> cols): options(opts), statusColor(cols), visible(false), current(0){
 	int numElem = opts.size();
 	double height = (size.y - (numElem - 1) * padding) / (double)(numElem);
 	double y = origin.y;
@@ -40,7 +40,6 @@ Menu::~Menu(){
 
 void Menu::show(){
 	visible = true;
-	draw();
 }
 
 void Menu::hide(){
