@@ -26,11 +26,12 @@ EXECS			= bin/test.out bin/game.out
 test.out.deps = test.o
 test.deps = test.cpp
 
-game.out.deps = game.o main.o menu.o match.o
+game.out.deps = game.o main.o menu.o match.o character.o 
 game.deps = game.cpp game.h menu.h
 main.deps = main.cpp game.h
 menu.deps = Menu.cpp menu.h 
-match.deps = match.cpp match.h menu.h
+match.deps = match.cpp match.h menu.h character.h
+character.deps = character.cpp character.h
 
 
 ###############################################################################

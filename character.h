@@ -13,17 +13,21 @@
 	private:
 		int health; //character health
 		bool stunned; // checks if character has been hit
-		pair<double,double> position;//finds position
-		std::vector<Rect<float>> hitBox;//hitboc for the move
+		std::pair<double,double> position;//finds position
+		std::vector<sf::Rect<float>> hitBox;//hitboc for the move
 		sf::Event hit;
 		
 	public:
 		Character();
 		int getHealth();//returns health
 		bool state();//returns whether or not the person has been hit
-		void move(sf::Event event);
-		pair<double,double> getPosition();//returns position
+		void move(int Keys);
+		std::pair<double,double> getPosition();//returns position
+
+		sf::Rect<float> getBound();
 		
+		enum keys {LEFT=1, RIGHT=2, UP=4, DOWN=8,
+					A=16, B=32, X=64, Y=128};	
 	 
  };
  #endif
