@@ -11,6 +11,7 @@ class Game{
 	private:
 		const std::string name;
 		sf::RenderWindow window;
+		sf::Font *font;
 		Menu *mainMenu;
 	public:
 		Game(std::string _name);
